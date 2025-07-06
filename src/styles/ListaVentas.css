@@ -25,6 +25,7 @@ body {
   margin: 2rem auto;
   border-radius: 16px;
   max-width: 800px;
+  min-width: 280px;
   box-shadow: var(--sombra);
 }
 
@@ -83,12 +84,13 @@ body {
 /* Lista de ventas horizontal */
 .lista-ventas {
   list-style: none;
-  padding: 0;
-  margin: 0;
+  padding: 0px;
+  margin: 0px;
   display: flex;
   flex-direction: column;
   gap: 0.6rem;
-  max-height: 350px;
+  max-height: 400px;
+  max-width: 600px;
   overflow-y: auto;
 
 }
