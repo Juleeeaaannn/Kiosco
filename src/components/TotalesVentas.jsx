@@ -96,13 +96,13 @@ const TotalesVentas = () => {
       ) : (
         <div className="totales-list">
           <div className="totales-item efectivo">
-            <span>Efectivo:</span> <span>${totales.efectivo.toFixed(2)}</span>
+            <span>Efectivo</span> <span>${totales.efectivo.toFixed(2)}</span>
           </div>
           <div className="totales-item transferencia">
             <span>Mercado Pago</span> <span>${totales.transferencia.toFixed(2)}</span>
           </div>
           <div className="totales-item total">
-            <span>Total:</span> <span>${totales.total.toFixed(2)}</span>
+            <span>Total</span> <span>${totales.total.toFixed(2)}</span>
           </div>
         </div>
       )}

@@ -19,9 +19,9 @@ body {
 
 .totales-container {
   background: var(--card);
-  padding: 2rem;
+  padding: 3rem;
   border-radius: 16px;
-  max-width: 600px;
+  max-width: 600px;;
   margin: 2rem auto;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
@@ -79,6 +79,7 @@ body {
 .totales-item.efectivo {
     display: grid;
     grid-template-columns: 100%;
+    padding: .8rem 4rem;
     border-left: 5px solid var(--success);
     font-weight: bold;
 }
@@ -86,6 +87,7 @@ body {
 .totales-item.transferencia {
     display: grid;
     grid-template-columns: 100%;
+    padding: .8rem 4rem;
     border-left: 5px solid var(--info);
     font-weight: bold;
 }
@@ -95,5 +97,5 @@ body {
     grid-template-columns: 100%;
     border-left: 5px solid var(--accent);
     font-weight: bold;
-    font-size: 2rem;
+    font-size: 1.5rem;
 }

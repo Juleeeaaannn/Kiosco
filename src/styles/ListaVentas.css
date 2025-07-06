@@ -16,7 +16,7 @@ body {
   color: var(--texto);
   font-family: 'Segoe UI', sans-serif;
   margin: 0;
-  padding: 0 1rem 70px; /* padding inferior por el nav fijo */
+  padding: 0 1rem 100px; /* padding inferior por el nav fijo */
 }
 
 .contenedor {
@@ -139,5 +139,6 @@ body {
 }
 
 .boton-eliminar:hover {
-  transform: scale(1.15);
+  transform: scale(1.05);
+  border: #ffb6b6 1px solid;
 }
