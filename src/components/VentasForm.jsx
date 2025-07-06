@@ -91,7 +91,7 @@ const VentasForm = () => {
             className="form-input"
             value={precioVenta}
             onChange={(e) => setPrecioVenta(e.target.value)}
-            min="0"
+            min="-9999999.99"
             step="0.01"
             placeholder="Ej: 1500.00"
           />
