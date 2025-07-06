@@ -1,0 +1,77 @@
+/* VentasForm.css */
+
+:root {
+  --bg: #1e1e2f;
+  --card: #2b2b3c;
+  --text: #f0f0f0;
+  --accent: #4f46e5;
+  --success: #22c55e;
+  --gray: #9ca3af;
+}
+
+.form-container {
+  background: var(--card);
+  padding: 2rem;
+  border-radius: 16px;
+  max-width: 600px;
+  margin: 2rem auto;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  color: var(--text);
+}
+
+.form-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  margin-bottom: 0.4rem;
+  color: var(--gray);
+  font-weight: 500;
+}
+
+.form-input,
+.form-select {
+  background-color: var(--bg);
+  color: var(--text);
+  border: 1px solid var(--gray);
+  border-radius: 8px;
+  padding: 0.6rem;
+  font-size: 1rem;
+}
+
+.form-button {
+  background-color: var(--accent);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 0.75rem;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.form-button:hover {
+  background-color: #6366f1;
+}
+
+.form-message {
+  margin-top: 0.5rem;
+  text-align: center;
+  font-size: 0.95rem;
+  color: var(--success);
+}
