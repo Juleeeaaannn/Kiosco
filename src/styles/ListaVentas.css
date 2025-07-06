@@ -1,6 +1,6 @@
 :root {
-  --fondo: #1f1f2e;
-  --carta: #2c2c3a;
+  --fondo: #1e1e2f;
+  --carta: #2b2b3c;
   --texto: #f0f0f0;
   --gris: #9ca3af;
   --azul: #4f46e5;
@@ -119,15 +119,22 @@ body {
 }
 .user{
   grid-column: 1 / span 2;
+  font-weight: bold;
 }
 .venta-precio {
   grid-column: 1 / span 2;
   text-align: center;
   font-weight: 600;
-  color: var(--verde);
   white-space: nowrap;
+  font-weight: bold;
+  padding: 5px;
 }
-
+.negativo {
+  color: var(--rojo);
+}
+.positivo {
+  color: var(--verde);
+}
 .boton-eliminar {
   grid-column: 1 / span 2;
   background: var(--rojo);

@@ -36,7 +36,9 @@ const VentasForm = () => {
         id_usuario: parseInt(usuarioId),
         metodo_pago: metodoPago,
         precio_venta: parseFloat(precioVenta),
-        fecha_hora: new Date().toISOString(),
+        fecha_hora: new Date().toLocaleString("en-US", {
+        timeZone: "America/Argentina/Buenos_Aires",
+        }).toString(),
         id_producto: null
       }
     ]);

@@ -119,7 +119,7 @@ const ListaVentas = () => {
               <span className="venta-dato">{formatearFecha(venta.fecha_hora)}</span>
               <span className="venta-dato">{formatearHora(venta.fecha_hora)}</span>
               <span className="venta-dato user">{venta.usuarios?.nomyap}</span>
-                            <span className="venta-precio">
+              <span className={(parseFloat(venta.precio_venta).toFixed(2))>0?"venta-precio positivo":"venta-precio negativo"}>
                 ${parseFloat(venta.precio_venta).toFixed(2)}
               </span>
               <button
