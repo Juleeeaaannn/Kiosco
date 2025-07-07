@@ -6,6 +6,7 @@ import { Nav } from './Nav';
 const TotalesVentas = () => {
   const [ventas, setVentas] = useState([]);
   const [filtro, setFiltro] = useState('hoy');
+  const [fechaPersonalizada, setFechaPersonalizada] = useState('');
   const [loading, setLoading] = useState(true);
   const [totales, setTotales] = useState({
     efectivo: 0,
@@ -32,10 +33,14 @@ const TotalesVentas = () => {
   }, []);
 
   useEffect(() => {
-    const hoy = new Date(); // Fecha actual
+    const hoy = new Date();
     let inicio;
 
-    switch (filtro) {
+    if (filtro === 'fecha-personalizada' && fechaPersonalizada) {
+      const partes = fechaPersonalizada.split('-'); // formato YYYY-MM-DD
+      inicio = new Date(partes[0], partes[1] - 1, partes[2]);
+    } else {
+        switch (filtro) {
       case 'hoy':
         inicio = new Date(hoy.getFullYear(), hoy.getMonth(), hoy.getDate()); // Inicio del día actual
         break;
@@ -52,13 +57,21 @@ const TotalesVentas = () => {
       default:
         inicio = null;
     }
+    }
 
     let efectivo = 0;
     let transferencia = 0;
 
     ventas.forEach((v) => {
       const fechaVenta = new Date(v.fecha_hora);
+      const coincideFechaPersonalizada =
+        filtro === 'fecha-personalizada' && fechaPersonalizada
+          ? fechaVenta.toDateString() === inicio.toDateString()
+          : true;
+
       if (!inicio || fechaVenta >= inicio) {
+        if (filtro === 'fecha-personalizada' && !coincideFechaPersonalizada) return;
+
         const monto = parseFloat(v.precio_venta) || 0;
         if (v.metodo_pago === 'efectivo') efectivo += monto;
         if (v.metodo_pago === 'transferencia') transferencia += monto;
@@ -70,7 +83,7 @@ const TotalesVentas = () => {
       transferencia,
       total: efectivo + transferencia
     });
-  }, [filtro, ventas]);
+  }, [filtro, ventas, fechaPersonalizada]);
 
   return (
     <div className="totales-container">
@@ -88,7 +101,17 @@ const TotalesVentas = () => {
           <option value="semana">Esta semana</option>
           <option value="mes">Este mes</option>
           <option value="anio">Este año</option>
+          <option value="fecha-personalizada">Por día específico</option>
         </select>
+
+        {filtro === 'fecha-personalizada' && (
+          <input
+            type="date"
+            value={fechaPersonalizada}
+            onChange={(e) => setFechaPersonalizada(e.target.value)}
+            className="input-fecha"
+          />
+        )}
       </div>
 
       {loading ? (

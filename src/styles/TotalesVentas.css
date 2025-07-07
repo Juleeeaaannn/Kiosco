@@ -99,3 +99,11 @@ body {
     font-weight: bold;
     font-size: 1.5rem;
 }
+.input-fecha {
+  margin-top: 0.5rem;
+  background-color: #1f1f2e;
+  color: #f0f0f0;
+  border: 1px solid #3f3f4f;
+  padding: 0.5rem;
+  border-radius: 8px;
+}
