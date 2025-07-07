@@ -132,15 +132,22 @@ body {
   font-weight: bold;
   padding: 5px;
 }
+.contEF{
+  border-right: var(--verde) 5px solid;
+  
+}
+.contTRANSF{
+  border-right: var(--info) 5px solid;
+}
 .metodo_tansf {
   grid-column: 1 / span 2;
-  border-bottom: var(--info) 1px solid;
   color: var(--info);
+  text-align: end;
 }
 .metodo_ef {
-  grid-column: 1 / span 2;
-  border-bottom: var(--verde) 1px solid;
+  grid-column: 1 / span 2; 
   color: var(--verde);
+  text-align: end;
 }
 .negativo {
   color: var(--rojo);
