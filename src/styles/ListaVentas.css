@@ -4,6 +4,7 @@
   --texto: #f0f0f0;
   --gris: #9ca3af;
   --azul: #4f46e5;
+  --info: #3b82f6;
   --verde: #22c55e;
   --rojo: #ef4444;
   --borde: #3f3f4f;
@@ -89,7 +90,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 0.6rem;
-  max-height: 400px;
+  max-height: 320px;
   max-width: 600px;
   overflow-y: auto;
 
@@ -130,6 +131,16 @@ body {
   white-space: nowrap;
   font-weight: bold;
   padding: 5px;
+}
+.metodo_tansf {
+  grid-column: 1 / span 2;
+  border-bottom: var(--info) 1px solid;
+  color: var(--info);
+}
+.metodo_ef {
+  grid-column: 1 / span 2;
+  border-bottom: var(--verde) 1px solid;
+  color: var(--verde);
 }
 .negativo {
   color: var(--rojo);

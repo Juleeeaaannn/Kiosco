@@ -32,19 +32,19 @@ const TotalesVentas = () => {
   }, []);
 
   useEffect(() => {
-    const hoy = new Date();
+    const hoy = new Date(); // Fecha actual
     let inicio;
 
     switch (filtro) {
       case 'hoy':
-        inicio = new Date(hoy.getFullYear(), hoy.getMonth(), hoy.getDate());
+        inicio = new Date(hoy.getFullYear(), hoy.getMonth(), hoy.getDate()); // Inicio del día actual
         break;
       case 'semana':
-        const primerDia = hoy.getDate() - hoy.getDay() + 1;
-        inicio = new Date(hoy.getFullYear(), hoy.getMonth(), primerDia);
+        const primerDia = hoy.getDate() - hoy.getDate() + 1 ; // Ajuste para que el lunes sea el primer día de la semana
+        inicio = new Date(hoy.getFullYear(), hoy.getMonth(), primerDia);// Ajuste para que el lunes sea el primer día
         break;
       case 'mes':
-        inicio = new Date(hoy.getFullYear(), hoy.getMonth(), 1);
+        inicio = new Date(hoy.getFullYear(), hoy.getMonth(), 1); // Inicio del mes actual
         break;
       case 'anio':
         inicio = new Date(hoy.getFullYear(), 0, 1);

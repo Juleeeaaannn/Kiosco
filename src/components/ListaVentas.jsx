@@ -19,7 +19,7 @@ const ListaVentas = () => {
     setLoading(true);
     const { data, error } = await supabase
       .from("ventas")
-      .select("id_venta, precio_venta, fecha_hora, usuarios (nomyap, id_usuario)")
+      .select("id_venta, precio_venta,metodo_pago, fecha_hora, usuarios (nomyap, id_usuario)")
       .order("fecha_hora", { ascending: false });
 
     if (error) {
@@ -75,7 +75,14 @@ const ListaVentas = () => {
       new Date(v.fecha_hora).toISOString().split("T")[0] === fechaFiltro;
     return pasaUsuario && pasaFecha;
   });
-
+  //---------------------------------------------------------
+  const clase =(venta) =>{ 
+    if (parseFloat(venta.precio_venta) > 0) {
+      return `venta-precio positivo`;
+    } else { 
+      return `venta-precio negativo`;
+    } 
+  }
   return (
     <div className="contenedor">
       <h2 className="titulo">Historial de Ventas</h2>
@@ -115,13 +122,15 @@ const ListaVentas = () => {
       ) : (
         <ul className="lista-ventas">
           {ventasFiltradas.map((venta) => (
-            <li className="item-venta-linea" key={venta.id_venta}>
+            <li className={`item-venta-linea`} key={venta.id_venta}>
               <span className="venta-dato">{formatearFecha(venta.fecha_hora)}</span>
               <span className="venta-dato">{formatearHora(venta.fecha_hora)}</span>
+              <span className={`venta-dato ${venta.metodo_pago === "efectivo"?"metodo_ef":"metodo_tansf"}`}>{venta.metodo_pago}</span>              
               <span className="venta-dato user">{venta.usuarios?.nomyap}</span>
-              <span className={(parseFloat(venta.precio_venta).toFixed(2))>0?"venta-precio positivo":"venta-precio negativo"}>
+              <span className={clase(venta)}> 
                 ${parseFloat(venta.precio_venta).toFixed(2)}
               </span>
+              
               <button
                 className="boton-eliminar"
                 onClick={() => handleEliminar(venta.id_venta)}
