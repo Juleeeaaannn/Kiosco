@@ -101,7 +101,7 @@ body {
   grid-template-columns: 50% 50%;
   align-items: center;
   background-color: #2e2e3e;
-  padding: 0.8rem 1rem;
+  padding: 0rem 1rem 1rem 1rem;
   border-radius: 10px;
   font-size: 0.95rem;
   color: var(--texto);
@@ -122,22 +122,24 @@ body {
 }
 .user{
   grid-column: 1 / span 2;
-  font-weight: bold;
+  text-align: start;
+  padding-left: 31px;
 }
 .venta-precio {
   grid-column: 1 / span 2;
   text-align: center;
   font-weight: 600;
+  font-size: large;
   white-space: nowrap;
   font-weight: bold;
   padding: 5px;
 }
 .contEF{
-  border-right: var(--verde) 5px solid;
+  border-left: var(--verde) 5px solid;
   
 }
 .contTRANSF{
-  border-right: var(--info) 5px solid;
+  border-left: var(--info) 5px solid;
 }
 .metodo_tansf {
   grid-column: 1 / span 2;
