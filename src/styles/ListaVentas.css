@@ -23,7 +23,7 @@ body {
 .contenedor {
   background: var(--carta);
   padding: 1.5rem;
-  margin: 2rem auto;
+  margin: 1rem auto;
   border-radius: 16px;
   max-width: 800px;
   min-width: 280px;
