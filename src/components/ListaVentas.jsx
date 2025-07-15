@@ -122,24 +122,21 @@ const ListaVentas = () => {
       ) : (
         <ul className="lista-ventas">
           {ventasFiltradas.map((venta) => (
-            <li className={`item-venta-linea ${venta.metodo_pago === "efectivo"?"contEF":"contTRANSF"}`} key={venta.id_venta}>
-              <span className={`venta-dato ${venta.metodo_pago === "efectivo"?"metodo_ef":"metodo_tansf"}`}>{venta.metodo_pago}</span>
-              <span className="venta-dato user">{venta.usuarios?.nomyap}</span>
-              <span className="venta-dato">{formatearFecha(venta.fecha_hora)}</span>
-              <span className="venta-dato">{formatearHora(venta.fecha_hora)}</span>
-                           
-              
-              <span className={clase(venta)}> 
-                ${parseFloat(venta.precio_venta).toFixed(2)}
-              </span>
-              
-              <button
-                className="boton-eliminar"
-                onClick={() => handleEliminar(venta.id_venta)}
-              >
-                🗑️
-              </button>
-            </li>
+            
+            <li className={`item-venta-linea ${venta.metodo_pago === "efectivo" ? "contEF" : "contTRANSF"}`} key={venta.id_venta}>
+            
+            <span className="venta-dato user">{venta.usuarios?.nomyap}</span>
+            <span className={`venta-dato metodo ${venta.metodo_pago === "efectivo" ? "metodo_ef" : "metodo_tansf"}`}>
+              {venta.metodo_pago === "efectivo" ? "💵" :<span> <img src="../icons/mp.png" className="icon-img"/> </span> }
+            </span>
+            <span className="venta-dato hora">{formatearHora(venta.fecha_hora)}</span>
+            <span className="venta-dato fecha">{formatearFecha(venta.fecha_hora)}</span>
+
+            <span className={`venta-dato monto ${clase(venta)}`}>
+              ${parseFloat(venta.precio_venta).toFixed(2)}
+            </span>
+            <button className="boton-eliminar" onClick={() => handleEliminar(venta.id_venta)}>🗑️</button>
+          </li>
           ))}
         </ul>
       )}

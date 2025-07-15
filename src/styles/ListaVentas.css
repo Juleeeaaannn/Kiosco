@@ -98,10 +98,11 @@ body {
 
 .item-venta-linea {
   display: grid;
-  grid-template-columns: 50% 50%;
+  grid-template-columns: 42% 42% 16%;
+  grid-template-rows: 33% 33% 33%;
   align-items: center;
   background-color: #2e2e3e;
-  padding: 0rem 1rem 1rem 1rem;
+  padding: 0rem;
   border-radius: 10px;
   font-size: 0.95rem;
   color: var(--texto);
@@ -121,9 +122,9 @@ body {
   font-size: 0.9rem;
 }
 .user{
-  grid-column: 1 / span 2;
   text-align: start;
   padding-left: 25px;
+  padding: 5px 0px 10px 10px;
 }
 .venta-precio {
   grid-column: 1 / span 2;
@@ -142,14 +143,13 @@ body {
   border-left: var(--info) 5px solid;
 }
 .metodo_tansf {
-  grid-column: 1 / span 2;
   color: var(--info);
   text-align: end;
 }
 .metodo_ef {
-  grid-column: 1 / span 2; 
   color: var(--verde);
   text-align: end;
+  padding: 0px 15px 0px 0px;
 }
 .negativo {
   color: var(--rojo);
@@ -158,16 +158,26 @@ body {
   color: var(--verde);
 }
 .boton-eliminar {
-  grid-column: 1 / span 2;
+  grid-column: 3;
+  grid-row: 1 / 4;
   background: var(--rojo);
   border: none;
   cursor: pointer;
   font-size: 1.2rem;
   color: var(--rojo);
   transition: transform 0.1s ease;
+  height: 100%;
+  padding: 0%;
+  border-radius: 0px 10px 10px 0px;
 }
 
 .boton-eliminar:hover {
-  transform: scale(1.05);
+  transform: scale(.95);
   border: #ffb6b6 1px solid;
+}
+.icon-img{
+  padding: 5px 13px 0px 0px;
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
 }
